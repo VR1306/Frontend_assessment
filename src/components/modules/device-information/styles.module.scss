@@ -1,0 +1,425 @@
+@import '../../../index.scss';
+
+.container {
+  background-color: $BACKGROUND_PRIMARY_A;
+  color: $TEXT_SECONDARY;
+  height: 100%;
+  @include flex(row, space-around, center);
+
+  .first_section_container {
+    @include flex(column, center, center);
+    gap: updatedSize(20);
+    width: 40%;
+
+    p {
+      font-size: updatedSize(50);
+      font-weight: $FONT_WEIGHT_500;
+      flex-wrap: wrap;
+    }
+
+    .input_button_container {
+      width: 100%;
+      gap: updatedSize(10);
+      @include flex(row, center, start);
+
+      .start_button_container {
+        width: 100%;
+
+        .start_button {
+          width: updatedSize(248);
+          height: updatedSize(63);
+          font-size: $FONT_SIZE_16;
+          font-weight: $FONT_WEIGHT_400;
+        }
+      }
+    }
+
+
+  }
+
+  .device_image {
+    width: updatedSize(700);
+    height: updatedSize(700);
+  }
+}
+
+.secondary_container {
+  background-color: $BACKGROUND_SECONDARY;
+  color: $TEXT_SECONDARY;
+  @include flex(row, space-evenly, center);
+  padding: updatedSize(30);
+
+  .overall_container {
+    @include flex(row, space-evenly, start);
+    gap: updatedSize(20); // Adds spacing between items for better layout
+    width: 100%;
+
+
+    .image_description_container {
+      @include flex(column, space-evenly, start);
+      gap: updatedSize(22.5); // Spacing between logo & text
+      transform: translateY(10px);
+      transition: transform 0.4s ease-in-out;
+
+      &:hover{
+        transform: translateY(0px);
+        cursor: pointer
+      }
+    }
+
+    .logo_container {
+      @include flex(row, start, start);
+      width: 72%;
+     
+
+      img {
+        width: auto;
+        height: updatedSize(25);
+      }
+    }
+
+    .description {
+      font-size: $FONT_SIZE_14;
+      font-weight: $FONT_WEIGHT_400;
+      margin: 0;
+      width: updatedSize(348);
+      color: $DESCRIPTION;
+     
+    }
+
+    .border_right {
+      border-left: 1px solid $BORDER_BOTTOM;
+      height: 106px;
+    }
+  }
+}
+
+
+// max width till 1000px
+@media screen and (max-width:1000px) {
+  .container {
+    background-color: $BACKGROUND_PRIMARY_A;
+    color: $TEXT_SECONDARY;
+    height: 100%;
+    @include flex(column, center, center);
+
+    .first_section_container {
+      order: 2;
+      @include flex(column, center, center);
+      gap: updatedSize(20);
+      width: 100%;
+      padding: updatedSize(20);
+
+      p {
+        width: 80%;
+        font-size: updatedSize(40);
+        font-weight: $FONT_WEIGHT_500;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .input_button_container {
+        @include flex(row, center, start);
+
+        .custom_container {
+          width: auto;
+
+          .custom_Input_container {
+            width: auto;
+
+            .custom_Input {
+              width: updatedSize(333);
+            }
+          }
+        }
+
+        .start_button_container {
+          width: auto;
+
+          .start_button {
+            width: updatedSize(248);
+            height: updatedSize(63);
+            font-size: $FONT_SIZE_16;
+            font-weight: $FONT_WEIGHT_400;
+          }
+        }
+      }
+
+
+    }
+
+    .device_image {
+      order: 1;
+      width: updatedSize(700);
+      height: updatedSize(700);
+    }
+  }
+
+  .secondary_container {
+    background-color: $BACKGROUND_SECONDARY;
+    color: $TEXT_SECONDARY;
+    @include flex(row, center, center);
+    padding: updatedSize(30) 0;
+    gap: updatedSize(30);
+    width: auto;
+
+    .overall_container {
+      @include flex(row, center, center);
+      gap: 0; // Adds spacing between items for better layout
+      // width: auto;
+      flex: 1;
+
+      .image_description_container {
+        @include flex(column, center, center);
+        gap: updatedSize(22.5); // Spacing between logo & text
+      }
+
+      .logo_container {
+        @include flex(row, start, start);
+        width: 72%;
+
+        img {
+          width: auto;
+          height: updatedSize(25);
+        }
+      }
+
+      .description {
+        font-size: $FONT_SIZE_13;
+        font-weight: $FONT_WEIGHT_400;
+        width: 72%;
+        color: $DESCRIPTION;
+        text-align: start;
+      }
+
+      .border_right {
+        border-right: 1px solid $BORDER_BOTTOM;
+        height: 150px;
+        border-bottom: 0;
+        width: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// max width till 767px
+@media screen and (max-width:767px) {
+  .container {
+    background-color: $BACKGROUND_PRIMARY_A;
+    color: $TEXT_SECONDARY;
+    height: 100%;
+    @include flex(column, center, center);
+
+    .first_section_container {
+      order: 2;
+      @include flex(column, center, center);
+      gap: updatedSize(20);
+      width: 100%;
+      padding: updatedSize(20);
+
+      p {
+
+        font-size: updatedSize(40);
+        font-weight: $FONT_WEIGHT_500;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .input_button_container {
+        @include flex(row, center, start);
+
+        .custom_container {
+          width: auto;
+
+          .custom_Input_container {
+            width: auto;
+
+            .custom_Input {
+              width: updatedSize(333);
+            }
+          }
+        }
+
+        .start_button_container {
+          width: auto;
+
+          .start_button {
+            width: updatedSize(248);
+            height: updatedSize(63);
+            font-size: $FONT_SIZE_16;
+            font-weight: $FONT_WEIGHT_400;
+          }
+        }
+      }
+
+
+    }
+
+    .device_image {
+      order: 1;
+      width: updatedSize(700);
+      height: updatedSize(700);
+    }
+  }
+
+  .secondary_container {
+    background-color: $BACKGROUND_SECONDARY;
+    color: $TEXT_SECONDARY;
+    @include flex(column, center, center);
+    padding: updatedSize(30);
+
+    .overall_container {
+      @include flex(column, center, center);
+      gap: $Spacing_15; // Adds spacing between items for better layout
+      width: 100%;
+
+      .image_description_container {
+        @include flex(column, center, center);
+        gap: updatedSize(22.5); // Spacing between logo & text
+        transform: translateY(0px);
+      }
+
+      .logo_container {
+        width: 100%;
+        @include flex(column, center, center);
+
+        img {
+          width: updatedSize(83);
+          height: updatedSize(25);
+        }
+      }
+
+      .description {
+        font-size: $FONT_SIZE_14;
+        font-weight: $FONT_WEIGHT_400;
+        margin: 0;
+        width: 50%;
+        color: $DESCRIPTION;
+        text-align: center;
+      }
+
+      .border_right {
+        border-left: 0;
+        border-bottom: 1px solid $BORDER_BOTTOM;
+        width: 107px;
+        height: 0;
+        margin-top: updatedSize(30);
+        margin-bottom: updatedSize(30);
+      }
+    }
+  }
+}
+
+
+
+// Max width till 700px
+@media screen and (max-width:700px) {
+  .container {
+    background-color: $BACKGROUND_PRIMARY_A;
+    color: $TEXT_SECONDARY;
+    height: 100%;
+    @include flex(column, center, center);
+
+    .first_section_container {
+      order: 2;
+      @include flex(column, center, center);
+      gap: updatedSize(20);
+      width: 100%;
+      padding: updatedSize(20);
+
+      p {
+        width: 100%;
+        font-size: updatedSize(40);
+        font-weight: $FONT_WEIGHT_500;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .input_button_container {
+        @include flex(column, center, center);
+
+        .custom_container {
+          width: 100%;
+
+          .custom_Input_container {
+            width: 100%;
+
+            .custom_Input {
+              width: 100%;
+            }
+          }
+        }
+
+        .start_button_container {
+          width: 100%;
+
+          .start_button {
+            width: 100%;
+            height: updatedSize(63);
+            font-size: $FONT_SIZE_16;
+            font-weight: $FONT_WEIGHT_400;
+          }
+        }
+      }
+
+
+    }
+
+    .device_image {
+      order: 1;
+      width: updatedSize(331);
+      height: updatedSize(304);
+    }
+  }
+
+  .secondary_container {
+    background-color: $BACKGROUND_SECONDARY;
+    color: $TEXT_SECONDARY;
+    @include flex(column, center, center);
+    padding: updatedSize(30);
+
+    .overall_container {
+      @include flex(column, center, center);
+      gap: updatedSize(20); // Adds spacing between items for better layout
+      width: 100%;
+
+      .image_description_container {
+        @include flex(column, center, center);
+        gap: updatedSize(22.5); // Spacing between logo & text
+        transform: translateY(0px);
+
+      }
+
+      .logo_container {
+        width: 100%;
+        @include flex(column, center, center);
+
+        img {
+          width: updatedSize(83);
+          height: updatedSize(25);
+        }
+      }
+
+      .description {
+        font-size: $FONT_SIZE_13;
+        font-weight: $FONT_WEIGHT_400;
+        margin: 0;
+        width: 100%;
+        color: $DESCRIPTION;
+        text-align: center;
+      }
+
+      .border_right {
+        border-left: 0;
+        border-bottom: 1px solid $BORDER_BOTTOM;
+        width: 107px;
+        height: 0;
+        margin-top: updatedSize(30);
+        margin-bottom: updatedSize(30);
+      }
+    }
+  }
+}

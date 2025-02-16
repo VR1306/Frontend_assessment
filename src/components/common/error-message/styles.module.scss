@@ -1,0 +1,9 @@
+@import "../../../index.scss";
+
+.formError{
+    display: inline-block;
+    color:$TEXT_SECONDARY;
+    font-size: $FONT_SIZE_14;
+    font-weight: $FONT_WEIGHT_400;
+    height: updatedSize(20);
+}

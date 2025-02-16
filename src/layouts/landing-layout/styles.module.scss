@@ -1,0 +1,24 @@
+@import '../../index.scss';
+
+.layout_container {
+  position: relative;
+  width: 100%;
+  @include flex(column, flex-start, center);
+  
+
+  .fixed_container {
+    position: fixed;
+    width: 100%;
+    box-shadow: $BOX_SHADOW;
+
+    .border_bottom {
+      width: 100%;
+      border-bottom: 1px solid $BORDER_BOTTOM;
+    }
+  }
+}
+
+.children_container {
+  width: 100%;
+  margin-top: updatedSize(90);
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Color+Emoji&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tsukimi+Rounded&display=swap');
+
+@function updatedSize($size) {
+  $newSize: $size - ($size * 0.15);
+  @return #{$newSize}px;
+}
+
+// COLORS
+$BACKGROUND_BLACK_DARK: #000;
+$BACKGROUND_PRIMARY_A:#020A19;
+$BACKGROUND_PRIMARY_B: #fff;
+$BACKGROUND_SECONDARY: #1A1C2B;
+$BUTTON_PRIMARY:#dd0735;
+$BUTTON_PRIMARY_HOVER:#bb022a;
+$TEXT_PRIMARY:#020a19;
+$TEXT_SECONDARY:#FFFFFF;
+$BORDER_BOTTOM:#FFFFFF33;
+$DESCRIPTION:#FFFFFF99;
+
+$TEXT_PLACEHOLDER:#e5e7eb;
+
+
+//SHADOWS
+$BOX_SHADOW: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+
+//FONTS FAMILY
+$NOTO_COLOR_EMOJI: "Noto Color Emoji", serif;
+$POPPINS: "Poppins", serif;
+$OUTFIT: "Outfit", serif;
+
+//SPACING EVEN VALUES
+$Spacing_2: 2px;
+$Spacing_4: 4px;
+$Spacing_6: 6px;
+$Spacing_8: 8px;
+$Spacing_10: 10px;
+$Spacing_12: 12px;
+$Spacing_14: 14px;
+$Spacing_16: 16px;
+$Spacing_18: 18px;
+$Spacing_20: 20px;
+$Spacing_22: 22px;
+$Spacing_24: 24px;
+$Spacing_26: 26px;
+$Spacing_28: 28px;
+
+//SPACING ODD VALUES
+$Spacing_1: 1px;
+$Spacing_3: 3px;
+$Spacing_5: 5px;
+$Spacing_7: 7px;
+$Spacing_9: 9px;
+$Spacing_11: 11px;
+$Spacing_13: 13px;
+$Spacing_15: 15px;
+$Spacing_17: 17px;
+$Spacing_19: 19px;
+$Spacing_21: 21px;
+$Spacing_23: 23px;
+$Spacing_25: 25px;
+$Spacing_27: 27px;
+$Spacing_29: 29px;
+
+//FONT WEIGHTS
+$FONT_WEIGHT_100: 100;
+$FONT_WEIGHT_200: 200;
+$FONT_WEIGHT_300: 300;
+$FONT_WEIGHT_400: 400;
+$FONT_WEIGHT_500: 500;
+$FONT_WEIGHT_600: 600;
+$FONT_WEIGHT_700: 700;
+$FONT_WEIGHT_800: 800;
+$FONT_WEIGHT_900: 900;
+
+
+
+// FONT SIZES
+$FONT_SIZE_12: 12px;
+$FONT_SIZE_13: 13px;
+$FONT_SIZE_14: 14px;
+$FONT_SIZE_15: 15px;
+$FONT_SIZE_16: 16px;
+$FONT_SIZE_17: 17px;
+$FONT_SIZE_18: 18px;
+$FONT_SIZE_19: 19px;
+$FONT_SIZE_20: 20px;
+$FONT_SIZE_21: 21px;
+$FONT_SIZE_22: 22px;
+$FONT_SIZE_23: 23px;
+$FONT_SIZE_24: 24px;
+$FONT_SIZE_25: 25px;
+$FONT_SIZE_26: 26px;
+$FONT_SIZE_27: 27px;
+$FONT_SIZE_28: 28px;
+$FONT_SIZE_29: 29px;
+$FONT_SIZE_30: 30px;
+$FONT_SIZE_31: 31px;
+$FONT_SIZE_32: 32px;
+
+// MIXINS
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+body {
+  background: $BACKGROUND_PRIMARY_A;
+  color: $BACKGROUND_BLACK_DARK;
+  font-family:$POPPINS;
+  font-size: $FONT_SIZE_16;
+  margin: 0;
+}

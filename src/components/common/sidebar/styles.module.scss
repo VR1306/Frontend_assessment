@@ -1,0 +1,45 @@
+@import '../../../index.scss';
+
+    //Button container and styles
+
+.container{
+  @include flex(column, center, center); 
+  gap: $Spacing_20;
+  
+  .header_button_container{
+    width: 100%;
+
+    .header_button{
+      width: 100%;
+      height: updatedSize(60);
+      padding: $Spacing_10 $Spacing_26;
+      font-size: $FONT_SIZE_15;
+      font-weight: $FONT_WEIGHT_500;
+      color: $TEXT_SECONDARY;
+      background-color: $BUTTON_PRIMARY;
+      border: 1px solid $BUTTON_PRIMARY;
+      border-radius: $Spacing_4;
+      cursor: pointer;
+      text-transform: uppercase;
+      &:hover{
+        background-color: $BUTTON_PRIMARY_HOVER;
+        border: 1px solid $BUTTON_PRIMARY_HOVER;
+      }
+    }
+
+    .login_button{
+      width: 100%;
+      height: updatedSize(60);
+      padding: $Spacing_10 $Spacing_26;
+      font-size: $FONT_SIZE_16;
+      font-weight: $FONT_WEIGHT_500;
+      color: $TEXT_PRIMARY;
+      background-color: $BACKGROUND_PRIMARY_B;
+      border: 1px solid $BACKGROUND_PRIMARY_B;
+      border-radius: $Spacing_3;
+      cursor: pointer;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+}

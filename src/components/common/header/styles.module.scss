@@ -1,0 +1,144 @@
+@import '../../../index.scss';
+
+//Header container and styles
+.header_container {
+  width: 100%;
+  height: updatedSize(90);
+  background-color: $BACKGROUND_PRIMARY_A;
+  padding: 0 updatedSize(100);
+  @include flex(row, space-between, center);
+  transition: background-color 0.4s ease-in-out;
+
+  &:hover {
+    background-color: $BACKGROUND_PRIMARY_B;
+  }
+
+  //Logo container and styles
+  .logo_container {
+    @include flex(row, flex-start, center);
+
+    .logo {
+      height: updatedSize(200);
+    }
+  }
+
+  //Button container and styles
+  .header_button_container {
+    @include flex(row, flex-end, center);
+
+    .header_button {
+      height: updatedSize(54);
+      padding: $Spacing_10 $Spacing_26;
+      font-size: $FONT_SIZE_15;
+      font-weight: $FONT_WEIGHT_500;
+      color: $TEXT_SECONDARY;
+      background-color: $BUTTON_PRIMARY;
+      border: 1px solid $BUTTON_PRIMARY;
+      border-radius: $Spacing_4;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $BUTTON_PRIMARY_HOVER;
+        border: 1px solid $BUTTON_PRIMARY_HOVER;
+      }
+    }
+
+    .burger_logo {
+      width: updatedSize(50);
+      height: updatedSize(50);
+    }
+  }
+}
+
+.scrolled_container {
+  // position: fixed;
+  width: 100%;
+  height: updatedSize(90);
+  background-color: $BACKGROUND_PRIMARY_B;
+  @include flex(row, space-around, center);
+  transition: background-color 0.4s ease-in-out;
+
+  //Logo container and styles
+  .logo_container {
+    @include flex(row, null, center);
+    width: 100%;
+
+    .logo {
+      height: updatedSize(200);
+    }
+  }
+
+  //Button container and styles
+  .header_button_container {
+    @include flex(row, flex-end, center);
+    width: 100%;
+
+    .header_button {
+      height: updatedSize(54);
+      padding: $Spacing_10 $Spacing_26;
+      font-size: $FONT_SIZE_15;
+      font-weight: $FONT_WEIGHT_500;
+      color: $TEXT_SECONDARY;
+      background-color: $BUTTON_PRIMARY;
+      border: 1px solid $BUTTON_PRIMARY;
+      border-radius: $Spacing_4;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $BUTTON_PRIMARY_HOVER;
+        border: 1px solid $BUTTON_PRIMARY_HOVER;
+      }
+    }
+  }
+}
+
+//Responsive styles
+
+@media screen and (max-width:700px) {
+  .header_container {
+    padding: 0 updatedSize(30);
+
+    //Logo container and styles
+    .logo_container {
+      @include flex(row, null, center);
+      width: 100%;
+
+      .logo {
+        height: updatedSize(120);
+      }
+    }
+
+    .header_button_container {
+      @include flex(row, flex-end, center);
+
+      .burger_logo {
+        width: updatedSize(29);
+        height: updatedSize(29);
+      }
+    }
+
+  }
+
+  .scrolled_container {
+    //Logo container and styles
+    .logo_container {
+      @include flex(row, null, center);
+      width: 100%;
+
+      .logo {
+        height: updatedSize(120);
+      }
+    }
+
+    .header_button_container {
+      @include flex(row, flex-end, center);
+
+      .burger_logo {
+        width: updatedSize(29);
+        height: updatedSize(29);
+      }
+    }
+  }
+}

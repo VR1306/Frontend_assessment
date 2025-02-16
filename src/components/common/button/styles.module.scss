@@ -1,0 +1,19 @@
+@import '../../../index.scss';
+
+.common_styles {
+  height: updatedSize(54);
+  padding: $Spacing_10 $Spacing_26;
+  font-size: $FONT_SIZE_15;
+  font-weight: $FONT_WEIGHT_500;
+  color: $TEXT_SECONDARY;
+  background-color: $BUTTON_PRIMARY;
+  border: 1px solid $BUTTON_PRIMARY;
+  border-radius: $Spacing_4;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $BUTTON_PRIMARY_HOVER;
+    border: 1px solid $BUTTON_PRIMARY_HOVER;
+  }
+}
