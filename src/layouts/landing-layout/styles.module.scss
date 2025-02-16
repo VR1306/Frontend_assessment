@@ -10,7 +10,7 @@
     position: fixed;
     width: 100%;
     box-shadow: $BOX_SHADOW;
-
+    z-index: 1;
     .border_bottom {
       width: 100%;
       border-bottom: 1px solid $BORDER_BOTTOM;

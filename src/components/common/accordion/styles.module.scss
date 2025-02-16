@@ -1,0 +1,50 @@
+@import '../../../index.scss';
+
+.container {
+  width: 100%;
+
+    @include flex(column, center, center);
+    .label_icon_container {
+      border: 1px solid $TEXT_PLACEHOLDER;
+      @include flex(row, space-between, center);
+      width: 560px;
+      padding: updatedSize(20);
+      border-radius:$Spacing_5;
+      .title {
+        width: 80%;
+        color: $TAB_INACTIVE;
+        font-size: $FONT_SIZE_18;
+        font-weight: $FONT_WEIGHT_500;
+      }
+
+      .arrow_container {
+        @include flex(row, center, end);
+        width: 10%;
+        transform: rotate(90deg);
+      }
+    }
+
+    .active_tab{
+      background-color: $BACKGROUND_PRIMARY_A;
+      border: 1px solid $BACKGROUND_PRIMARY_A;
+      @include flex(row, space-between, center);
+      width: 560px;
+      padding: updatedSize(20);
+      border-radius:$Spacing_5;
+      .title {
+        width: 80%;
+        color: $TEXT_SECONDARY;
+        font-size: $FONT_SIZE_18;
+        font-weight: $FONT_WEIGHT_500;
+      }
+
+      .arrow_container {
+        @include flex(row, center, end);
+        width: 10%;
+        transform: rotate(90deg);
+        .arrow_image svg polygon {
+          fill: $TEXT_SECONDARY; // Remove quotes
+        }
+      }
+    }
+  }

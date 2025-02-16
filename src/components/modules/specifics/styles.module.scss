@@ -3,6 +3,130 @@
 .container{
   background: $BACKGROUND_PRIMARY_B;
   height: 100%;
+  padding-top: updatedSize(150);
   @include flex(column,center,center);
+
+  .specifics_header{
+  font-size: $FONT_SIZE_36;
+  font-weight: $FONT_WEIGHT_500;
+  color: $TEXT_PRIMARY;
+  }
+
+  .tab_container{
+    padding: 0;
+    padding-top: updatedSize(100); 
+    width: 100%;
+    @include flex(row,center,center);
+    column-gap:0;
+    .tab_customTabWrapper{
+      .tab_button_container{
+        width: 100%;
+        .tab_button_styles{
+          width: 100%;
+          height: updatedSize(100);
+          font-size: $FONT_SIZE_22;
+        }
+      }
+    }
+  }
   
 }
+
+@media screen and (max-width:1265px) {
+  .container{
+    background: $BACKGROUND_PRIMARY_B;
+    height: 100%;
+    padding-top: updatedSize(150);
+    @include flex(column,center,center);
+  
+    .specifics_header{
+    font-size: $FONT_SIZE_36;
+    font-weight: $FONT_WEIGHT_500;
+    color: $TEXT_PRIMARY;
+    text-align: center;
+    }
+  
+    .tab_container {
+      padding: 0;
+      padding-top: updatedSize(100);
+      width: 91%;
+      @include flex(row, start, center);
+      column-gap: 0;
+      overflow-x: auto; // Enable horizontal scrolling
+      white-space: nowrap; // Prevent items from wrapping
+      scroll-behavior: smooth; // Smooth scrolling
+    
+      .tab_customTabWrapper {
+        display: flex; // Ensure tabs are in a row
+        flex-wrap: nowrap;
+    
+        .tab_button_container {
+          width: max-content; // Prevent buttons from shrinking
+          display: flex;
+    
+          .tab_button_styles {
+            height: updatedSize(100);
+            font-size: $FONT_SIZE_22;
+            white-space: nowrap; // Keep text in one line
+          }
+        }
+      }
+    }
+    
+    // Optional: Hide scrollbar but keep scrolling functionality
+    .tab_container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    
+  }
+}
+
+// @media screen and (max-width:1023px) {
+//   .container{
+//     background: $BACKGROUND_PRIMARY_B;
+//     height: 100%;
+//     padding-top: updatedSize(150);
+//     @include flex(column,center,center);
+  
+//     .specifics_header{
+//     font-size: $FONT_SIZE_36;
+//     font-weight: $FONT_WEIGHT_500;
+//     color: $TEXT_PRIMARY;
+//     }
+  
+//     .tab_container {
+//       padding: 0;
+//       padding-top: updatedSize(100);
+//       width: 91%;
+//       @include flex(row, start, center);
+//       column-gap: 0;
+//       overflow-x: auto; // Enable horizontal scrolling
+//       white-space: nowrap; // Prevent items from wrapping
+//       scroll-behavior: smooth; // Smooth scrolling
+    
+//       .tab_customTabWrapper {
+//         display: flex; // Ensure tabs are in a row
+//         flex-wrap: nowrap;
+    
+//         .tab_button_container {
+//           width: max-content; // Prevent buttons from shrinking
+//           display: flex;
+    
+//           .tab_button_styles {
+//             height: updatedSize(100);
+//             font-size: $FONT_SIZE_22;
+//             white-space: nowrap; // Keep text in one line
+//           }
+//         }
+//       }
+//     }
+    
+//     // Optional: Hide scrollbar but keep scrolling functionality
+//     .tab_container::-webkit-scrollbar {
+//       display: none;
+//     }
+    
+    
+//   }
+// }

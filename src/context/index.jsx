@@ -1,4 +1,5 @@
 import { createContext,useState } from "react";
+import { CONSTANTS } from "../constants/constants";
 
 //Default Values for the Context
 const INIT_VALUES ={
@@ -9,7 +10,9 @@ const INIT_VALUES ={
   defaultResponsiveWidth:1280,
   hamburgerMenu:null,
   isSidebar:false,
-  scrollThreshold :10, // Adjust this value as needed
+  scrollThreshold :10, // Adjust this value as needed,
+  current_specific_tab: CONSTANTS.single_app_kisok,
+  isAccordionNeeded:false,
 
 }
 
@@ -24,8 +27,10 @@ export const AssessmentContextProvider = ({children}) => {
   const [isResponsive,setIsResponsive] = useState(INIT_VALUES.isResponsive);
   const [defaultResponsiveWidth] = useState(INIT_VALUES.defaultResponsiveWidth);
   const [hamburgerMenu,setHamburgerMenu] = useState(INIT_VALUES.hamburgerMenu);
+  const [currentSpecificTab,setCurrentSpecificTab]=useState(INIT_VALUES.current_specific_tab);
   const [isSidebar,setIsSidebar] = useState(INIT_VALUES.isSidebar);
   const [scrollThreshold] = useState(INIT_VALUES.scrollThreshold);
+  const [isAccordionNeeded,setIsAccordionNeeded]=useState(INIT_VALUES.isAccordionNeeded)
   return (
     <AssessmentContext.Provider  
     value={{
@@ -43,6 +48,10 @@ export const AssessmentContextProvider = ({children}) => {
       isSidebar,
       setIsSidebar,
       scrollThreshold,
+      setCurrentSpecificTab,
+      currentSpecificTab,
+      isAccordionNeeded,
+      setIsAccordionNeeded
     }}
     >
         {children}

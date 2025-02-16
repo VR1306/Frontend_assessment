@@ -16,6 +16,9 @@ $TEXT_PRIMARY:#020a19;
 $TEXT_SECONDARY:#FFFFFF;
 $BORDER_BOTTOM:#FFFFFF33;
 $DESCRIPTION:#FFFFFF99;
+$TAB_INACTIVE:#020A1980;
+$TAB_BORDER:#F7F7F7;
+$TAB_POINTS:#333333;
 
 $TEXT_PLACEHOLDER:#e5e7eb;
 
@@ -44,7 +47,7 @@ $Spacing_22: 22px;
 $Spacing_24: 24px;
 $Spacing_26: 26px;
 $Spacing_28: 28px;
-
+$Spacing_40:40px;
 //SPACING ODD VALUES
 $Spacing_1: 1px;
 $Spacing_3: 3px;
@@ -97,6 +100,10 @@ $FONT_SIZE_29: 29px;
 $FONT_SIZE_30: 30px;
 $FONT_SIZE_31: 31px;
 $FONT_SIZE_32: 32px;
+$FONT_SIZE_33:33px;
+$FONT_SIZE_34:34px;
+$FONT_SIZE_35:35px;
+$FONT_SIZE_36:36px;
 
 // MIXINS
 @mixin flex($direction, $justify, $align) {

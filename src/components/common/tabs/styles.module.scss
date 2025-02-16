@@ -1,0 +1,33 @@
+@import '../../../index.scss';
+
+.container {
+  @include flex(row, flex-start, center);
+  column-gap: updatedSize(50);
+  height: 100%;
+  margin: 0;
+  li {
+    list-style: none;
+  }
+
+  .activeTab{
+    background-color: $BACKGROUND_PRIMARY_A;
+    color: $TEXT_SECONDARY;
+    border: 1px solid $BACKGROUND_PRIMARY_A;
+    width:100%;
+    height:100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .4s;
+
+  }
+  .inactiveTab{
+    background-color: $BACKGROUND_PRIMARY_B;
+    color: $TAB_INACTIVE;
+    border: 1px solid $TAB_BORDER;
+    width:100%;
+    height:100%;
+    transition-property: all;
+    transition-timing-function:background-color cubic-bezier(.4,0,.2,1);
+    transition-duration: .4s;
+  }
+}
