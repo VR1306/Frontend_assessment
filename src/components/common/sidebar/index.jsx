@@ -5,7 +5,16 @@ import CommonButton from '../button';
 import { CONSTANTS } from '../../../constants/constants';
 import './styles.scss';
 const Sidebar = ({ show, handleClose, }) => {
-  const { trial_label,login_label } = CONSTANTS;
+  const { trial_label,login_label,sign_up_url,sign_in_url } = CONSTANTS;
+
+  const routeToSignUp=()=>{
+    window.open(sign_up_url);
+    handleClose();
+  }
+  const routeToSignIn=()=>{
+    window.open(sign_in_url);
+    handleClose();
+  }
 
   return (
     <Offcanvas show={show} onHide={handleClose} placement='end'>
@@ -18,12 +27,14 @@ const Sidebar = ({ show, handleClose, }) => {
             name={trial_label}
             button_styles={styles.header_button}
             button_container_class={styles.header_button_container}
+            onClick={routeToSignUp}
           />
 
           <CommonButton
             name={login_label}
             button_styles={styles.login_button}
             button_container_class={styles.header_button_container}
+            onClick={routeToSignIn}
           />
         </div>
       </Offcanvas.Body>

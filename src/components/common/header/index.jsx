@@ -10,7 +10,7 @@ import burgerWhite from '../../../assets/icons/hamburger-white.svg';
 import Sidebar from '../sidebar';
 
 const Header = () => {
-  const {trial_label}=CONSTANTS;
+  const {trial_label,sign_up_url}=CONSTANTS;
   const {
     headerIcon,
     setHeaderIcon,
@@ -26,6 +26,7 @@ const Header = () => {
     scrollThreshold,
   } = useContext(AssessmentContext);
 
+
 //Setting the Header Icon to default on the first render  
 useEffect(
   function defaultIconRender(){
@@ -35,18 +36,6 @@ useEffect(
 
 //Adding the scroll event listener to the window
 useEffect(() => {
-  // const handleScroll = () => {
-  //     if (window.scrollY > window.innerHeight * 0.1) { // Adjust scroll distance as needed
-  //         setIsScrolled(true);
-  //         setHeaderIcon(hoverLogo); // Change logo on scroll
-  //         setHamburgerMenu(burger) //Change the hamburger menu on scroll
-  //     } 
-  //     else {
-  //         setIsScrolled(false);
-  //         setHeaderIcon(defaultLogo); // Revert logo when scrolling back up
-  //         setHamburgerMenu(burgerWhite) //Change the hamburger menu on scroll
-  //     }
-  // };
   const handleScroll = () => {
     if (window.scrollY > scrollThreshold) {
         setIsScrolled(true);
@@ -109,6 +98,9 @@ useEffect(() => {
       setHamburgerMenu(burgerWhite);
     }
   };
+  const routeToSignUp=()=>{
+    window.open(sign_up_url)
+  }
   return (
    <React.Fragment> 
     <div 
@@ -127,6 +119,7 @@ useEffect(() => {
          name={trial_label} 
          button_styles={styles.header_button}
          button_container_class={styles.header_button_container}
+         onClick={routeToSignUp}
         />}
     </div>
     <Sidebar show={isSidebar} handleClose={handleClose}/>

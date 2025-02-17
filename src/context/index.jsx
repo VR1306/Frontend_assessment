@@ -78,6 +78,33 @@ const INIT_VALUES ={
       ]
     }
   ],
+  additional_possibilities:[
+    {
+      id: 1, // Corrected the typo
+      isOpen: true,
+      title: 'Effortless kiosk deployment & management',
+      description: "Deploy kiosk-enabled devices straight out of the box. Flash a custom Android Enterprise, Samsung Knox or ROM with Hexnode App on the devices by collaborating with OEM vendors who provide specially configured ROMs."
+    },
+    {
+      id: 2, // Corrected the typo
+      isOpen: false,
+      title: 'Customized interface for brand visibility',
+      description: "Create a locked-down environment with customized interface. Maximize brand visibility and leave a lasting impression by showcasing products, services and key messages directly to users through the customized interface."
+    },
+    {
+      id: 3, // Corrected the typo
+      isOpen: false,
+      title: 'Secure and update your app ecosystem',
+      description: "Streamline the deployment and management on apps on your kiosk devices. Save your time and effort, ensure security and improve your efficiency using Hexnode’s silent app installation and update features."
+    },
+    {
+      id: 4, // Corrected the typo
+      isOpen: false,
+      title: 'Provide an easy-to-use interface for end-users',
+      description: "Give your end-users the power to control their devices without overwhelming them with options. An intuitive interface to let them access only the essential settings they need. Make it easy for them to unlock the full potential of your devices hassle-free."
+    }
+  ],
+  current_additional_id : 1
 }
 
 //Context to be used in the Application
@@ -97,6 +124,8 @@ export const AssessmentContextProvider = ({children}) => {
   const [isAccordionNeeded,setIsAccordionNeeded]=useState(INIT_VALUES.isAccordionNeeded);
   const [currentDataAccordion,setCurrentDataAccordion]=useState(INIT_VALUES.current_data_accordion);
   const [accordion_data,setAccordionData]=useState(INIT_VALUES.accordion_data);
+  const [additionalData,setAdditionalData]=useState(INIT_VALUES.additional_possibilities);
+  const [currentAdditionalId,setCurrentAdditionalId]=useState(INIT_VALUES.current_additional_id)
   return (
     <AssessmentContext.Provider  
     value={{
@@ -121,7 +150,10 @@ export const AssessmentContextProvider = ({children}) => {
       currentDataAccordion,
       setCurrentDataAccordion,
       accordion_data,
-      setAccordionData
+      setAccordionData,
+      additionalData,
+      setAdditionalData,
+      currentAdditionalId,setCurrentAdditionalId
     }}
     >
         {children}
