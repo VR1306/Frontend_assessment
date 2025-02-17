@@ -5,6 +5,7 @@ import Additional from './additional-possibilities';
 import Platforms from './platforms';
 import ChooseHexnode from './choose-hexnode';
 const Home = () => {
+  
   return (
     <React.Fragment>
       <DeviceInformation/>
