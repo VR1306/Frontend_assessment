@@ -1,0 +1,198 @@
+@import '../../../index.scss';
+
+.container {
+  width: 100%;
+  @include flex(row, center, start);
+  gap: updatedSize(50);
+  padding: updatedSize(48) updatedSize(30);
+  transition: all 0.4s ease-in-out;
+
+  .image {
+    width: 513px;
+    height: 543px;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  .content_container {
+    row-gap: updatedSize(40);
+    width: 54%;
+    @include flex(column, center, start);
+
+    .overall_container {
+      row-gap: updatedSize(30);
+      @include flex(column, center, start);
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      .title {
+        cursor: pointer;
+        font-size: $FONT_SIZE_26;
+        color: $ADDITIONAL_FONT_COLOUR;
+        font-weight: $FONT_WEIGHT_500;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $BUTTON_PRIMARY_HOVER;
+        }
+      }
+
+      .description_wrapper {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        opacity: 0;
+      }
+
+      &.open .description_wrapper {
+        max-height: 500px; // Adjust based on content size
+        opacity: 1;
+      }
+
+      .description {
+        font-size: $FONT_SIZE_18;
+        font-weight: $FONT_WEIGHT_400;
+        color: $TAB_POINTS;
+        line-height: $Spacing_28;
+      }
+
+      .free_label {
+        cursor: pointer;
+        padding-top: updatedSize(20);
+        font-weight: $FONT_WEIGHT_500;
+        text-transform: uppercase;
+        line-height: $Spacing_23;
+        letter-spacing: 1.5px;
+        color: $BUTTON_PRIMARY;
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+
+        &:hover {
+          color: $BUTTON_PRIMARY_HOVER;
+          transform: translateX(2px);
+        }
+
+        img {
+          margin-left: 2px;
+          width: 16px;
+          height: 20px;
+          transition: margin-left 0.4s ease-in-out;
+        }
+
+        &:hover img {
+          margin-left: 10px;
+        }
+      }
+
+      .border_bottom {
+        border-bottom: 1px solid $TAB_BORDER;
+        width: 100%;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    @include flex(column, center, center);
+    height: 100%;
+
+    .image {
+      width: 340px;
+      height: 340px;
+      border-radius: 10px;
+    }
+
+    .content_container {
+      row-gap: updatedSize(40);
+      width: 100%;
+      @include flex(column, center, center);
+
+      .overall_container {
+        row-gap: updatedSize(40);
+        @include flex(column, center, start);
+        width: 100%;
+        cursor: pointer;
+
+        .image_container {
+          width: 100%;
+          @include flex(column, center, center);
+
+          .mobile_image {
+            width: 340px;
+            height: 340px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease-in-out;
+          }
+        }
+
+        .title {
+          width: 100%;
+          font-size: $FONT_SIZE_24;
+          text-align: start;
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            color: $BUTTON_PRIMARY_HOVER;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    @include flex(column, center, center);
+    height: 100%;
+    .content_container {
+      row-gap: updatedSize(40);
+      width: 100%;
+      @include flex(column, center, center);
+
+      .overall_container {
+        row-gap: updatedSize(40);
+        @include flex(column, center, start);
+        width: 100%;
+        cursor: pointer;
+
+        .image_container {
+          width: 100%;
+          @include flex(column, center, center);
+
+          .mobile_image {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease-in-out;
+          }
+        }
+
+        .title {
+          width: 100%;
+          font-size: $FONT_SIZE_24;
+          text-align: start;
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            color: $BUTTON_PRIMARY_HOVER;
+          }
+        }
+      }
+    }
+  }
+}
+
