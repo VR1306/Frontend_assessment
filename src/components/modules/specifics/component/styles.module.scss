@@ -2,14 +2,14 @@
 
 .container {
   height: 100%;
-  width: 91%;
+  width: 80.5%;
   background-color: $TAB_BORDER;
   @include flex(row, center, start);
   padding: updatedSize(40) updatedSize(30);
-  gap:updatedSize(40);
+  gap: updatedSize(40);
+
   .first_container {
     width: 65%;
-    // width: 100%;
     @include flex(column, center, center);
 
     .title_container {
@@ -21,16 +21,18 @@
     }
 
     .description_container {
-      @include flex(null,center,center);
+      @include flex(null, center, center);
+
       ul {
         padding: 0;
         margin: 0;
+
         li {
           padding: 0;
           margin: 0;
           list-style: none;
           @include flex(column, center, start);
-          
+
           .green_tick_container {
             @include flex(row, center, start);
             margin-top: 20px;
@@ -44,7 +46,7 @@
             p {
               font-size: $FONT_SIZE_18;
               width: 100%;
-              padding:0 10px;
+              padding: 0 10px;
               color: $TAB_POINTS;
               font-weight: $FONT_WEIGHT_400;
               margin: 0;
@@ -58,8 +60,8 @@
   .second_container {
     height: 100%;
     width: 30%;
-    @include flex(column,center,center);
-    // width: 50%;
+    @include flex(column, center, center);
+
     .image_styles {
       width: 100%;
       height: updatedSize(427.5);
@@ -67,7 +69,7 @@
     }
   }
 
-  /* Set initial state */
+  /* Animation setup */
   .first_container,
   .second_container {
     opacity: 0;
@@ -75,20 +77,14 @@
     transition: all 0.6s ease-in-out;
   }
 
-  /* Left-to-right animation (moving new content in from the right) */
-  &.slide-left {
-    .first_container,
-    .second_container {
-      animation: fadeSlideLeft 0.6s ease-in-out forwards;
-    }
+  &.slide-left .first_container,
+  &.slide-left .second_container {
+    animation: fadeSlideLeft 0.6s ease-in-out forwards;
   }
 
-  /* Right-to-left animation (moving new content in from the left) */
-  &.slide-right {
-    .first_container,
-    .second_container {
-      animation: fadeSlideRight 0.6s ease-in-out forwards;
-    }
+  &.slide-right .first_container,
+  &.slide-right .second_container {
+    animation: fadeSlideRight 0.6s ease-in-out forwards;
   }
 
   @keyframes fadeSlideLeft {
@@ -114,235 +110,78 @@
   }
 }
 
-//Media Query for Responsivie desigins
-@media screen and (max-width:1265px) {
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1290px) {
   .container {
-        height: 100%;
-        width: 91%;
-        background-color: $TAB_BORDER;
-        @include flex(row, center, start);
-        padding: updatedSize(40) updatedSize(30);
-        gap:updatedSize(40);
-        .first_container {
-          width: 60%;
-          // width: 100%;
-          @include flex(column, center, center);
-      
-          .title_container {
-            font-size: $FONT_SIZE_28;
-            font-weight: $FONT_WEIGHT_500;
-            line-height: updatedSize(50);
-            padding-bottom: $Spacing_20;
-            width: 100%;
-          }
-      
-          .description_container {
-            @include flex(null,center,center);
-            ul {
-              padding: 0;
-              margin: 0;
-              li {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-                @include flex(column, center, start);
-                
-                .green_tick_container {
-                  @include flex(row, center, start);
-                  margin-top: 20px;
-      
-                  .green_tick {
-                    width: updatedSize(15.5);
-                    height: updatedSize(10);
-                    margin-top: $Spacing_5;
-                  }
-      
-                  p {
-                    font-size: $FONT_SIZE_18;
-                    width: 85%;
-                    padding:0 10px;
-                    color: $TAB_POINTS;
-                    font-weight: $FONT_WEIGHT_400;
-                    margin: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-      
-        .second_container {
-          height: 353px;
-          width: 460px;
-          @include flex(column,center,center);
-          // width: 50%;
-          .image_styles {
-            width: 100%;
-            border-radius: updatedSize(15);
-          }
-        }
-      
-        /* Set initial state */
-        .first_container,
-        .second_container {
-          opacity: 0;
-          transform: translateX(0%);
-          transition: all 0.6s ease-in-out;
-        }
-      
-        /* Left-to-right animation (moving new content in from the right) */
-        &.slide-left {
-          .first_container,
-          .second_container {
-            animation: fadeSlideLeft 0.6s ease-in-out forwards;
-          }
-        }
-      
-        /* Right-to-left animation (moving new content in from the left) */
-        &.slide-right {
-          .first_container,
-          .second_container {
-            animation: fadeSlideRight 0.6s ease-in-out forwards;
-          }
-        }
-      
-        @keyframes fadeSlideLeft {
-          from {
-            opacity: 0;
-            transform: translateX(100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      
-        @keyframes fadeSlideRight {
-          from {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      }
+    width: 91%;
+    .first_container {
+      width: 60%;
+    }
+
+    .second_container {
+      height: 353px;
+      width: 460px;
+    }
+  }
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (max-width: 1023px) {
   .container {
-        height: 100%;
-        width: 91%;
-        background-color: $TAB_BORDER;
-        @include flex(column, center, start);
-        padding: updatedSize(40) updatedSize(30);
-        gap:updatedSize(40);
-        .first_container {
-          order: 2;
-          width: 90%;
-          // width: 100%;
-          @include flex(column, center, center);
-      
-          .title_container {
-            font-size: $FONT_SIZE_28;
-            font-weight: $FONT_WEIGHT_500;
-            line-height: updatedSize(50);
-            padding-bottom: $Spacing_20;
-            width: 100%;
-          }
-      
-          .description_container {
-            @include flex(null,center,center);
-            ul {
-              padding: 0;
-              margin: 0;
-              li {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-                @include flex(column, center, start);
-                
-                .green_tick_container {
-                  @include flex(row, center, start);
-                  margin-top: 20px;
-      
-                  .green_tick {
-                    width: updatedSize(15.5);
-                    height: updatedSize(10);
-                    margin-top: $Spacing_5;
-                  }
-      
-                  p {
-                    font-size: $FONT_SIZE_18;
-                    width: 100%;
-                    padding:0 10px;
-                    color: $TAB_POINTS;
-                    font-weight: $FONT_WEIGHT_400;
-                    margin: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-      
-        .second_container {
-          order:1;
-          height: 353px;
-          width: 460px;
-          @include flex(column,center,center);
-          // width: 50%;
-          .image_styles {
-            width: 100%;
-            border-radius: updatedSize(15);
-          }
-        }
-      
-        /* Set initial state */
-        .first_container,
-        .second_container {
-          opacity: 0;
-          transform: translateX(0%);
-          transition: all 0.6s ease-in-out;
-        }
-      
-        /* Left-to-right animation (moving new content in from the right) */
-        &.slide-left {
-          .first_container,
-          .second_container {
-            animation: fadeSlideLeft 0.6s ease-in-out forwards;
-          }
-        }
-      
-        /* Right-to-left animation (moving new content in from the left) */
-        &.slide-right {
-          .first_container,
-          .second_container {
-            animation: fadeSlideRight 0.6s ease-in-out forwards;
-          }
-        }
-      
-        @keyframes fadeSlideLeft {
-          from {
-            opacity: 0;
-            transform: translateX(100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      
-        @keyframes fadeSlideRight {
-          from {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+    @include flex(column, center, start);
+
+    .first_container {
+      order: 2;
+      width: 90%;
+    }
+
+    .second_container {
+      order: 1;
+      height: 353px;
+      width: 460px;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .container {
+    width: 100%;
+    margin-top: updatedSize(48);
+    .first_container {
+      margin-top: updatedSize(48);
+      .title_container {
+        font-size: $FONT_SIZE_20;
       }
+      .description_container ul li .green_tick_container p{
+        font-size: $FONT_SIZE_16;
+      }
+    }
+
+    .second_container {
+      height: 240px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 100%;
+    margin-top: 0;
+    .first_container {
+      margin-top: updatedSize(48);
+      .title_container {
+        font-size: $FONT_SIZE_20;
+      }
+      .description_container ul li .green_tick_container p{
+        font-size: $FONT_SIZE_16;
+      }
+    }
+
+    .second_container {
+      height: 240px;
+      width: 100%;
+    }
+  }
 }

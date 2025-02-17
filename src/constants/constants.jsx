@@ -74,11 +74,7 @@ export const CONSTANTS = {
       'Configure ASAM effortlessly and elevate your user experience like never before.',
     ]
   },
-  accordion_data: [
-    'Single App Kiosk',
-    'Multi-App Kiosk',
-    'Web Based Kiosk',
-    'Digital Signages',
-    'ASAM Kisok',
-  ]
+
+
+  
 };
