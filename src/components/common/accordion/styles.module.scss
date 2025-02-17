@@ -1,0 +1,59 @@
+@import '../../../index.scss';
+
+.container {
+  width: 100%;
+  @include flex(column, center, center);
+
+  .label_icon_container,
+  .active_tab {
+    border: 1px solid $TEXT_PLACEHOLDER;
+    @include flex(row, space-between, center);
+    width: 93%;
+    padding: updatedSize(20);
+    border-radius: $Spacing_5;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+    .title {
+      width: 80%;
+      font-size: $FONT_SIZE_18;
+      font-weight: $FONT_WEIGHT_500;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .arrow_container {
+      @include flex(row, center, end);
+      width: 10%;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .active_tab {
+    background-color: $BACKGROUND_PRIMARY_A;
+    border: 1px solid $BACKGROUND_PRIMARY_A;
+
+    .title {
+      color: $TEXT_SECONDARY;
+    }
+
+    .arrow_container {
+      transform: rotate(270deg);
+    }
+  }
+
+  // Smooth drawer animation
+  .drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+ 
+  }
+
+  .drawer.open {
+    max-height: 100%; // Adjust this value based on content size
+    opacity: 1;
+    height: 100%;
+    width: 91%;
+  }
+}

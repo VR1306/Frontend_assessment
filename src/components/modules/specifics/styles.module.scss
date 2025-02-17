@@ -1,8 +1,70 @@
 @import '../../../index.scss';
 
-.container{
+.container {
   background: $BACKGROUND_PRIMARY_B;
   height: 100%;
-  @include flex(column,center,center);
-  
+  padding-top: updatedSize(150);
+  @include flex(column, center, center);
+
+  .specifics_header {
+    font-size: $FONT_SIZE_36;
+    font-weight: $FONT_WEIGHT_500;
+    color: $TEXT_PRIMARY;
+    text-align: center;
+  }
+
+  .tab_container {
+    padding: 0;
+    padding-top: updatedSize(100);
+    width: 100%;
+    @include flex(row, center, center);
+    column-gap: 0;
+
+    .tab_customTabWrapper {
+      display: flex; // Ensures tabs remain in a row
+      flex-wrap: nowrap;
+
+      .tab_button_container {
+        width: max-content; // Prevents buttons from shrinking
+        display: flex;
+
+        .tab_button_styles {
+          width: 100%;
+          height: updatedSize(100);
+          font-size: $FONT_SIZE_22;
+          white-space: nowrap; // Keeps text in one line
+        }
+      }
+    }
+  }
 }
+
+@media screen and (max-width: 1265px) {
+  .container {
+    .tab_container {
+      width: 91%;
+      @include flex(row, start, center);
+      overflow-x: auto; // Enables horizontal scrolling
+      white-space: nowrap; // Prevents items from wrapping
+      scroll-behavior: smooth; // Smooth scrolling
+
+      // Optional: Hide scrollbar but keep scrolling functionality
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    .specifics_header {
+      font-size: $FONT_SIZE_28;
+      font-weight: $FONT_WEIGHT_500;
+      color: $TEXT_PRIMARY;
+      text-align: center;
+      margin-bottom: updatedSize(48);
+    }
+  }
+}
+
