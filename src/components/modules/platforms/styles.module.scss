@@ -1,0 +1,229 @@
+@import '../../../index.scss';
+
+.container {
+  background-color: $BACKGROUND_PRIMARY_B;
+  color: $TEXT_PRIMARY;
+  padding-top: updatedSize(100);
+  height: 100%;
+  @include flex(column, center, center);
+
+  .platforms_title {
+    font-size: updatedSize(48);
+    font-weight: $FONT_WEIGHT_500;
+    padding-bottom: updatedSize(100);
+  }
+
+  .wrapper {
+    padding-bottom: updatedSize(100);
+    @include flex(row, center, center);
+    gap: 20px;
+
+    .image_container {
+      padding: updatedSize(15);
+      border: 1px solid $TEXT_PLACEHOLDER;
+      width: 189px;
+      height: 71px;
+      box-shadow:$BOX_SHADOW;
+      transition: 
+        transform 0.6s ease-in-out, 
+        box-shadow 0.6s ease-in-out, 
+        opacity 0.6s ease-in-out;
+
+      &:hover {
+        transform: translateY(-10px) ; // Smooth lift and slight scale
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+        opacity: 0.9; // Soft fade effect
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.4s ease-in-out; // Adding a smooth transition to the image itself
+
+        &:hover {
+          transform: scale(1.1); // Slight zoom on hover
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width:1280px) {
+  .container {
+    .wrapper {
+      padding-bottom: updatedSize(100);
+      // @include flex(row, center, center);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      flex-wrap: wrap;
+      gap: 20%;
+      .image_container {
+        padding: updatedSize(15);
+        border: 1px solid $TEXT_PLACEHOLDER;
+        width: 189px;
+        height: 71px;
+        box-shadow:$BOX_SHADOW;
+        transition: 
+          transform 0.6s ease-in-out, 
+          box-shadow 0.6s ease-in-out, 
+          opacity 0.6s ease-in-out;
+  
+        &:hover {
+          transform: translateY(-10px) ; // Smooth lift and slight scale
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+          opacity: 0.9; // Soft fade effect
+        }
+  
+        .image {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.4s ease-in-out; // Adding a smooth transition to the image itself
+  
+          &:hover {
+            transform: scale(1.1); // Slight zoom on hover
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen  and (max-width:899px){
+    .container {
+      .wrapper {
+        padding-bottom: updatedSize(100);
+        // @include flex(row, center, center);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        gap: 10%;
+        .image_container {
+          padding: updatedSize(15);
+          border: 1px solid $TEXT_PLACEHOLDER;
+          width: 189px;
+          height: 71px;
+          box-shadow:$BOX_SHADOW;
+          transition: 
+            transform 0.6s ease-in-out, 
+            box-shadow 0.6s ease-in-out, 
+            opacity 0.6s ease-in-out;
+    
+          &:hover {
+            transform: translateY(-10px) ; // Smooth lift and slight scale
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+            opacity: 0.9; // Soft fade effect
+          }
+    
+          .image {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out; // Adding a smooth transition to the image itself
+    
+            &:hover {
+              transform: scale(1.1); // Slight zoom on hover
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+@media screen  and (max-width:767px){
+    .container {
+    .platforms_title{
+
+    font-size: $FONT_SIZE_32;
+    }
+
+     .wrapper {
+        padding-bottom: updatedSize(100);
+        // @include flex(row, center, center);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        gap: 5%;
+        .image_container {
+          padding: updatedSize(15);
+          border: 1px solid $TEXT_PLACEHOLDER;
+          width: 189px;
+          height: 71px;
+          box-shadow:$BOX_SHADOW;
+          transition: 
+            transform 0.6s ease-in-out, 
+            box-shadow 0.6s ease-in-out, 
+            opacity 0.6s ease-in-out;
+    
+          &:hover {
+            transform: translateY(-10px) ; // Smooth lift and slight scale
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+            opacity: 0.9; // Soft fade effect
+          }
+    
+          .image {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out; // Adding a smooth transition to the image itself
+    
+            &:hover {
+              transform: scale(1.1); // Slight zoom on hover
+            }
+          }
+        }
+      }
+    }
+  }
+
+@media screen  and (max-width:424px){
+    .container {
+    .platforms_title{
+      text-align: center;
+    font-size: $FONT_SIZE_32;
+    }
+
+     .wrapper {
+        padding-bottom: updatedSize(100);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        gap: 4%;
+        width: 300px;
+        height: 253px;
+        .image_container {
+          padding: updatedSize(20);
+          border: 1px solid $TEXT_PLACEHOLDER;
+                 width: 100%;
+            height: 100%;
+        @include flex(row, center, center);
+        
+          box-shadow:$BOX_SHADOW;
+          transition: 
+            transform 0.6s ease-in-out, 
+            box-shadow 0.6s ease-in-out, 
+            opacity 0.6s ease-in-out;
+    
+          &:hover {
+            transform: translateY(-10px) ; // Smooth lift and slight scale
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+            opacity: 0.9; // Soft fade effect
+          }
+    
+          .image {
+          width: updatedSize(80);
+          height: updatedSize(40);
+            transition: transform 0.4s ease-in-out; // Adding a smooth transition to the image itself
+    
+            &:hover {
+              transform: scale(1.1); // Slight zoom on hover
+            }
+          }
+        }
+      }
+    }
+  }
