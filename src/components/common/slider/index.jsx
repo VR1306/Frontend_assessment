@@ -19,7 +19,7 @@ const Slider = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex < 2 ? prevIndex + 1 : prevIndex));
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
