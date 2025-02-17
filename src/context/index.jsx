@@ -104,7 +104,33 @@ const INIT_VALUES ={
       description: "Give your end-users the power to control their devices without overwhelming them with options. An intuitive interface to let them access only the essential settings they need. Make it easy for them to unlock the full potential of your devices hassle-free."
     }
   ],
-  current_additional_id : 1
+  current_additional_id : 1,
+  
+  choose_data:[
+    {
+      id: 1, // Corrected the typo
+      isOpen: true,
+      title: '"Hexnode is of great value. Works great with Android and iOS!"',
+      name:'Justin Modrak',
+      post:"Technology Coordinator",
+      company:'East Troy Community School District'
+    },
+    {
+      id: 2, // Corrected the typo
+      isOpen: true,
+      title: '"Most complete MDM solution I found, and I tested many of them, including major names."',
+      name:'Dalibor Kruljac"',
+      post:"",
+      company:'KAMELEYA LTD'
+    },    {
+      id: 3, // Corrected the typo
+      isOpen: true,
+      title: '"It seemed to be in-line with everything we were looking at."',
+      name:'Chris Robinson',
+      post:"Executive Account Manager, NCS",
+      company:''
+    },
+  ],
 }
 
 //Context to be used in the Application
@@ -126,6 +152,7 @@ export const AssessmentContextProvider = ({children}) => {
   const [accordion_data,setAccordionData]=useState(INIT_VALUES.accordion_data);
   const [additionalData,setAdditionalData]=useState(INIT_VALUES.additional_possibilities);
   const [currentAdditionalId,setCurrentAdditionalId]=useState(INIT_VALUES.current_additional_id)
+  const [chooseData,setChooseData]=useState(INIT_VALUES.choose_data)
   return (
     <AssessmentContext.Provider  
     value={{
@@ -153,7 +180,10 @@ export const AssessmentContextProvider = ({children}) => {
       setAccordionData,
       additionalData,
       setAdditionalData,
-      currentAdditionalId,setCurrentAdditionalId
+      currentAdditionalId,
+      setCurrentAdditionalId,
+      chooseData,
+      setChooseData
     }}
     >
         {children}

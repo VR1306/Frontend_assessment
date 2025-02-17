@@ -80,5 +80,12 @@ export const CONSTANTS = {
   sign_up_url:'https://www.hexnode.com/mobile-device-management/cloud/signup/',
   sign_in_url:'https://www.hexnode.com/mobile-device-management/sign-in/',
   platforms_support:'Platforms supported',
-  platform_icons:['android','windows','ios','androidtv','appletv','fire']
+  platform_icons:['android','windows','ios','androidtv','appletv','fire'],
+  footer_content: 'Sign up and try Hexnode free for 14 days!',
+  no_credit_card:'No credit cards required.',
+  request_demo:'Request a demo',
+  terms_condition:'Terms of Use - Privacy - Cookies',
+  copyrights:'Copyright © 2024 Mitsogo Inc. All Rights Reserved.',
+  why_we_should:'Why should you choose Hexnode?',
+   
 };
