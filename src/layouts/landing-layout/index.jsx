@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styles from './styles.module.scss'
 import Header from '../../components/common/header'
 import AssessmentContext from '../../context';
+import Footer from '../../components/common/footer';
 const LandingLayout = ({children}) => {
   const {isScrolled} = useContext(AssessmentContext);
   return (
@@ -15,6 +16,8 @@ const LandingLayout = ({children}) => {
   <section className={styles.children_container}>
       {children}
     </section>
+ 
+    <Footer/>
   </>
   )
 }

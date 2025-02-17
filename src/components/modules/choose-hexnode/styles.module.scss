@@ -1,0 +1,12 @@
+@import '../../../index.scss';
+
+.container{
+  // height: 100%;
+  background: $TAB_BORDER;
+  @include flex(column,center,center);
+  width: 100%;
+  padding-top: updatedSize(100);
+    h1{
+      text-align: center;
+  }
+}
