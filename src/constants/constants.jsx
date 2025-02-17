@@ -78,5 +78,7 @@ export const CONSTANTS = {
   additional_title:'What additional possibilities does the Kiosk mode offer?',
   try_for_free:'Try For Free',
   sign_up_url:'https://www.hexnode.com/mobile-device-management/cloud/signup/',
-  sign_in_url:'https://www.hexnode.com/mobile-device-management/sign-in/'
+  sign_in_url:'https://www.hexnode.com/mobile-device-management/sign-in/',
+  platforms_support:'Platforms supported',
+  platform_icons:['android','windows','ios','androidtv','appletv','fire']
 };
